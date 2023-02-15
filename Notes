@@ -1,0 +1,135 @@
+Blackbox Sample Manager
+
+Pad Manager
+- Sample Manager
+- Clip Manager
+- Slicer Manager
+- Ganular Manager
+
+Mod Midi Manager
+Setup Mods Per Pad
+
+
+
+
+
+
+- FX Panel in Global und Pad FX aufteilen
+- Slider Componente für die Parameter mit Update Funktion
+
+
+
+@_beatcount
+:
+"0"
+@_cellmode
+:
+"0"
+@_chokegrp  ->Excl Group
+:
+"0"
+@_deftemplate
+:
+"1"
+@_dualfilcutoff -> Filter
+:
+"0"
+@_envattack -> Attack
+:
+"0"
+@_envdecay -> Decay
+:
+"0"
+@_envrel -> Release
+:
+"200"
+@_envsus -> Sustain
+:
+"1000"
+@_fx1send -> FX1
+:
+"0"
+@_fx2send -> FX2
+:
+"0"
+@_gaindb -> Record Gain
+:
+"0"
+@_interpqual -> Quality
+:
+"0"
+@_loopmode -> Loopmode?
+:
+"0"
+@_loopmodes -> Loopmode?
+:
+"0"
+@_midimode
+:
+"0"
+@_outputbus -> Output
+:
+"0"
+@_padnote -> Pad Node
+:
+"0"
+@_panpos -> Pan
+:
+"0"
+@_pitch -> Pitch
+:
+"0"
+@_playthru
+:
+"0"
+@_polymode -> Polymode
+:
+"0"
+@_polymodeslice
+:
+"0"
+@_quantsize
+:
+"3"
+@_recinput -> Input
+:
+"0"
+@_recmonoutbus -> Rec Mon Chanel
+:
+"0"
+@_recpresetlen -> Record Lengh
+:
+"0"
+@_recquant -> Record Quant
+:
+"3"
+@_recthresh -> Record Threshold
+:
+"-20000"
+@_recusethres -> Use Record Threshold
+:
+"0"
+@_res -> RES
+:
+"500"
+@_reverse -> Reverse
+:
+"0"
+@_rootnote -> Rootnote
+:
+"0"
+@_samtrigtype
+:
+"0"
+@_slicestepmode
+:
+"0"
+@_synctype
+:
+"5"
+
+
+LoopStart, LoopEnd, Start, Lenght, Loopfade
+LFO Waveform Depht Rate
+
+

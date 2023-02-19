@@ -6,9 +6,9 @@ import TheSampleField from './components/TheSampleField.vue'
 import TheSettingsPanel from './components/TheSettingsPanel.vue'
 
 import dummyText from './xmls/preset.xml'
-import TheFileTree from './TheFileTree.vue'
-import TheRootFolderSelector from './TheRootFolderSelector.vue'
-import TheHeader from './TheHeader.vue'
+import TheFileTree from './components/TheFileTree.vue'
+import TheRootFolderSelector from './components/TheRootFolderSelector.vue'
+import TheHeader from './components/TheHeader.vue'
 
 const parser = new fxparser.XMLParser({
   ignoreAttributes: false,

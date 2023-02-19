@@ -28,7 +28,8 @@
       :dropdown="{
         name: 'Sync',
         options: [
-          { name: '1/16,', value: 'martina' },
+          { name: 'None', value: 'martina' },
+          { name: '1/16', value: 'martina' },
           { name: '1/8', value: 'martina' },
           { name: '1/2', value: 'martina' },
           { name: '1 bar', value: 'martina' },
@@ -36,30 +37,6 @@
         ],
       }"
       v-model="para['@_mute']"
-    />
-
-    <BaseSlider
-      :slider="{ name: 'Start', min: 0, max: 100, step: 0.1 }"
-      :domain="{ min: 0, max: 1000 }"
-      v-model="para['@_panpos']"
-    />
-
-    <BaseSlider
-      :slider="{ name: 'End', min: 0, max: 100, step: 0.1 }"
-      :domain="{ min: 0, max: 1000 }"
-      v-model="para['@_panpos']"
-    />
-
-    <BaseSlider
-      :slider="{ name: 'Loop Start', min: 0, max: 100, step: 0.1 }"
-      :domain="{ min: 0, max: 1000 }"
-      v-model="para['@_panpos']"
-    />
-
-    <BaseSlider
-      :slider="{ name: 'Loop End', min: 0, max: 100, step: 0.1 }"
-      :domain="{ min: 0, max: 1000 }"
-      v-model="para['@_panpos']"
     />
   </BaseFolder>
 </template>

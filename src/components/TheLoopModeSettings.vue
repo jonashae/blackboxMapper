@@ -1,5 +1,5 @@
 <template>
-  <BaseFolder name="LFO">
+  <BaseFolder name="loopMode">
     <BaseSelection
       :dropdown="{
         name: 'Loop Mode',

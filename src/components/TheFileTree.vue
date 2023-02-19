@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import wav from './js/wav.js'
-import dummyData from './js/dummyData.js'
+import wav from '../js/wav.js'
+import dummyData from '../js/dummyData.js'
 import ASampleFile from './ASampleFile.vue'
 
 export default {
@@ -40,7 +40,7 @@ export default {
     },
   },
   mounted() {
-    this.sampleLib = dummyData
+    // this.sampleLib = dummyData
   }
 }
 </script>

@@ -3,99 +3,56 @@
     <h3>Pad Settings</h3>
     <div class="SampleName">{{ sampleName }}</div>
 
-
-
-    <TheLoopModeSettings/>
-    <TheLFOSettings/>
-
-
-
-    <BaseFolder name="Main Routing">
+    <BaseFolder name="Main">
+      <BaseSelection
+        :dropdown="{
+          name: 'Cell Mode',
+          options: [
+            { name: 'Sample', value: 0 },
+            { name: 'Clip', value: 1 },
+            { name: 'Slicer', value: 2 },
+            { name: 'Granular', value: 3 },
+          ],
+        }"
+        v-model="para['@_cellmode']"
+      />
       <BaseSlider
         :slider="{ name: 'Gain', min: -96, max: 12, step: 0.1 }"
         :domain="{ min: -96000, max: 12000 }"
         v-model="para['@_gaindb']"
       />
-
       <BaseSlider
         :slider="{ name: 'Pan', min: -100, max: 100, step: 0.1 }"
         :domain="{ min: -1000, max: 1000 }"
         v-model="para['@_panpos']"
       />
-
       <BaseSelection
         :dropdown="{
           name: 'Output',
           options: [
-            { name: 'Stereo 1', value: 'martina' },
-            { name: 'Stereo 2', value: 'Jonas' },
-            { name: 'Stereo 3', value: 'Jonas' },
-            { name: 'Mono 1L', value: 'Jonas' },
-            { name: 'Mono 1R', value: 'Jonas' },
-            { name: 'Mono 2L', value: 'Jonas' },
-            { name: 'Mono 2R', value: 'Jonas' },
-            { name: 'Mono 3L', value: 'Jonas' },
-            { name: 'Mono 3R', value: 'Jonas' },
+            { name: 'Stereo 1', value: 0 },
+            { name: 'Stereo 2', value: 1 },
+            { name: 'Stereo 3', value: 2 },
+            { name: 'Mono 1L', value: 3 },
+            { name: 'Mono 1R', value: 4 },
+            { name: 'Mono 2L', value: 5 },
+            { name: 'Mono 2R', value: 6 },
+            { name: 'Mono 3L', value: 7 },
+            { name: 'Mono 3R', value: 8 },
           ],
         }"
-        v-model="para['@_mute']"
+        v-model="para['@_outputbus']"
       />
-
       <BaseSelection
         :dropdown="{
           name: 'Quality',
           options: [
-            { name: 'Normal', value: 'martina' },
-            { name: 'High Q', value: 'Jonas' },
+            { name: 'Normal', value: 0 },
+            { name: 'High Q', value: 1 },
           ],
         }"
-        v-model="para['@_mute']"
+        v-model="para['@_interpqual']"
       />
-    </BaseFolder>
-
-    <BaseFolder name="TriggerSettings">
-      <BaseSelection
-        :dropdown="{
-          name: 'Trigger Mode',
-          options: [
-            { name: 'Trigger', value: 'martina' },
-            { name: 'Gate', value: 'Jonas' },
-            { name: 'Toggle', value: 'Jonas' },
-          ],
-        }"
-        v-model="para['@_mute']"
-      />
-
-      <BaseSelection
-        :dropdown="{
-          name: 'Poly Mode',
-          options: [
-            { name: 'Mono', value: 'martina' },
-            { name: 'Poly 2', value: 'Jonas' },
-            { name: 'Poly 4', value: 'Jonas' },
-            { name: 'Poly 6', value: 'Jonas' },
-            { name: 'Poly 8', value: 'Jonas' },
-            { name: 'Poly X', value: 'Jonas' },
-          ],
-        }"
-        v-model="para['@_mute']"
-      />
-
-      <BaseSelection
-        :dropdown="{
-          name: 'Exclusion Group',
-          options: [
-            { name: 'Exel X', value: 'martina' },
-            { name: 'Exel A', value: 'martina' },
-            { name: 'Exel B', value: 'martina' },
-            { name: 'Exel C', value: 'martina' },
-            { name: 'Exel D', value: 'martina' },
-          ],
-        }"
-        v-model="para['@_mute']"
-      />
-
-
     </BaseFolder>
 
     <BaseFolder name="Sound Adjustment">
@@ -105,7 +62,6 @@
         v-model="para['@_pitch']"
       />
 
-      <BaseTextField init="C4" name="Root Note" />
       <BaseSlider
         :slider="{ name: 'Filter', min: -100, max: 100, step: 0.1 }"
         :domain="{ min: -1000, max: 1000 }"
@@ -159,7 +115,57 @@
       />
     </BaseFolder>
 
-    <SampleSettings />
+    <BaseFolder name="TriggerSettings">
+      <BaseSelection
+        :dropdown="{
+          name: 'Trigger Mode',
+          options: [
+            { name: 'Trigger', value: 0 },
+            { name: 'Gate', value: 1 },
+            { name: 'Toggle', value: 2 },
+          ],
+        }"
+        v-model="para['@_samtrigtype']"
+      />
+
+      <BaseSelection
+        :dropdown="{
+          name: 'Poly Mode',
+          options: [
+            { name: 'Mono', value: 0 },
+            { name: 'Poly 2', value: 1 },
+            { name: 'Poly 4', value: 2 },
+            { name: 'Poly 6', value: 3 },
+            { name: 'Poly 8', value: 4 },
+            { name: 'Poly X', value: 5 },
+          ],
+        }"
+        v-model="para['@_polymode']"
+      />
+
+      <BaseSelection
+        :dropdown="{
+          name: 'Exclusion Group',
+          options: [
+            { name: 'Exel X', value: 0 },
+            { name: 'Exel A', value: 1 },
+            { name: 'Exel B', value: 2 },
+            { name: 'Exel C', value: 3 },
+            { name: 'Exel D', value: 4 },
+          ],
+        }"
+        v-model="para['@_chokegrp']"
+      />
+    </BaseFolder>
+
+
+
+    <TheLFOSettings/>
+
+    <!--    <SampleSettings />-->
+    <!--    -->
+    <!--        <TheLoopModeSettings/>-->
+    <!--    <TheLFOSettings/>-->
   </div>
 </template>
 

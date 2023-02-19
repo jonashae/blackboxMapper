@@ -39,7 +39,7 @@ export default {
 .baseBoolean {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 100%;
   padding: 0.2rem;
   font-size: 0.75rem;

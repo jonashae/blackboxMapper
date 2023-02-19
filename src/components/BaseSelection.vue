@@ -6,7 +6,7 @@
       <option
         v-for="element in dropdown.options"
         :value="element.value"
-        :key="element.value"
+        :key="element.name"
       >
         {{ element.name }}
       </option>
@@ -17,18 +17,16 @@
 export default {
   name: 'BaseSelection',
   props: {
-    slider: {},
-    domain: {},
     dropdown: {},
+    modelValue: {},
   },
   emits: ['update:modelValue'],
   computed:{
     value: {
       get() {
-        return this.dropdown.options
+        return this.modelValue
       },
       set(value) {
-        console.log(value)
         this.$emit('update:modelValue', value)
       },
     },
@@ -39,13 +37,14 @@ export default {
 .baseSelection {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 100%;
   padding: 0.2rem;
   font-size: 0.75rem;
 }
 
 .label {
+
 }
 
 .inputField {
@@ -57,8 +56,4 @@ export default {
   background: #f3f3f3;
 }
 
-.inputSlider {
-  flex-grow: 1;
-  height: 1rem;
-}
 </style>

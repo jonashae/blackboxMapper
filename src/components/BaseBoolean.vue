@@ -2,11 +2,7 @@
   <div class="baseBoolean">
     <div class="label">{{ name }}</div>
 
-     <input
-        class="inputField"
-        type="checkbox"
-        v-model="value"
-      />
+    <input class="inputField" type="checkbox" v-model="value" />
   </div>
 </template>
 <script>
@@ -17,22 +13,23 @@ export default {
       type: String,
       required: true,
     },
-    init: {
-      type: Boolean,
-      required: true,
-    },
+    modelValue: {},
   },
   emits: ['update:modelValue'],
-  computed:{
+  computed: {
     value: {
       get() {
-        return this.init
+        return this.modelValue !== 0
       },
       set(value) {
-        this.$emit('update:modelValue', value)
+        if(value){
+          this.$emit('update:modelValue', 1)
+        } else {
+          this.$emit('update:modelValue', 0)
+        }
       },
     },
-  }
+  },
 }
 </script>
 <style scoped>

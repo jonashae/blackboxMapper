@@ -61,7 +61,6 @@ export default {
             (in_max - in_min) +
           out_min
         return   Math.floor(output)
-
       },
       set(value) {
         const in_min = this.slider.min

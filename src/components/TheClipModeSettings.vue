@@ -1,42 +1,42 @@
 <template>
-  <BaseFolder name="LFO">
-    <BaseBoolean :init="true" name="Loop Mode" v-model="para['@_mute']" />
+  <BaseFolder name="Clip Mode">
+    <BaseBoolean name="Loop Mode" v-model="para['@_loopmodes']" />
 
     <BaseSlider
       :slider="{ name: 'Beat Count 0 -> Auto', min: 0, max: 512, step: 1 }"
       :domain="{ min: 0, max: 512 }"
-      v-model="para['@_panpos']"
+      v-model="para['@_beatcount']"
     />
 
     <BaseSelection
       :dropdown="{
         name: 'Quant Size',
         options: [
-          { name: '1/16,', value: 'martina' },
-          { name: '1/8', value: 'martina' },
-          { name: '1/2', value: 'martina' },
-          { name: '1 bar', value: 'martina' },
-          { name: '2 bar', value: 'martina' },
-          { name: '4 bar', value: 'martina' },
-          { name: '8 bar', value: 'martina' },
+          { name: '1/16,', value: 0 },
+          { name: '1/8', value: 1 },
+          { name: '1/2', value: 2 },
+          { name: '1 bar', value: 3  },
+          { name: '2 bar', value: 4 },
+          { name: '4 bar', value: 5 },
+          { name: '8 bar', value: 6 },
         ],
       }"
-      v-model="para['@_mute']"
+      v-model="para['@_quantsize']"
     />
 
     <BaseSelection
       :dropdown="{
         name: 'Sync',
         options: [
-          { name: 'None', value: 'martina' },
-          { name: '1/16', value: 'martina' },
-          { name: '1/8', value: 'martina' },
-          { name: '1/2', value: 'martina' },
-          { name: '1 bar', value: 'martina' },
-          { name: 'Slice', value: 'martina' },
+          { name: 'None', value: 0 },
+          { name: '1/16', value: 1 },
+          { name: '1/8', value: 2 },
+          { name: '1/2', value: 3 },
+          { name: '1 bar', value: 4 },
+          { name: 'Slice', value: 5 },
         ],
       }"
-      v-model="para['@_mute']"
+      v-model="para['@_synctype']"
     />
   </BaseFolder>
 </template>

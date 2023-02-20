@@ -8,7 +8,7 @@ import TheSettingsPanel from './components/TheSettingsPanel.vue'
 import dummyText from './xmls/preset.xml'
 import TheFileTree from './components/TheFileTree.vue'
 import TheRootFolderSelector from './components/TheRootFolderSelector.vue'
-import TheHeader from './components/TheHeader.vue'
+import TheHeader from './components/Header.vue'
 
 const parser = new fxparser.XMLParser({
   ignoreAttributes: false,
@@ -37,23 +37,17 @@ store.dispatch('setActivePreset', output)
 
 
   <div class="container">
-  <TheHeader class="Header"/>
-    <TheSampleField/>
-
-    <!--    <div class="Settings">-->
-    <!--      <TheFXSettings/>-->
-    <!--    </div>-->
-
-    <TheSettingsPanel/>
-
+    <TheHeader class="Header"/>
     <TheFileTree class="Comments"/>
+    <TheSampleField/>
+    <TheSettingsPanel/>
   </div>
 </template>
 
 <style scoped>
 .container {
   display: grid;
-  grid-template-columns: 0.8fr 1fr 0.8fr;
+  grid-template-columns: 1fr 1fr 2^fr;
   grid-template-rows: 4rem 0.1fr;
   gap: 1rem;
   grid-template-areas:

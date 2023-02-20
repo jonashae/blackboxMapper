@@ -18,7 +18,7 @@
       v-model="para['@_lfowave']"
     />
 
-    <BaseBoolean :init="true" name="BeatSync" v-model="para['@_lfobeatsync']" />
+    <BaseBoolean name="BeatSync" v-model="para['@_lfobeatsync']" />
 
     <BaseSlider
       v-if="!showBeatSync"
@@ -58,7 +58,7 @@
       v-model="para['@_lfoamount']"
     />
 
-    <BaseBoolean :init="true" name="Restart with Trigger" v-model="para['@_lfokeytrig']" />
+    <BaseBoolean name="Restart with Trigger" v-model="para['@_lfokeytrig']" />
   </BaseFolder>
 </template>
 
